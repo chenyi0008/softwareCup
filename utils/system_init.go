@@ -18,6 +18,8 @@ func InitConfig() {
 	}
 	fmt.Println("config app:", viper.Get("app"))
 	fmt.Println("config mysql:", viper.Get("mysql"))
+	fmt.Println("config path:", viper.Get("file"))
+
 }
 
 func InitMySQL() *xorm.Engine {

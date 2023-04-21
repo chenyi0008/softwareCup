@@ -1,2 +1,5 @@
 mysql:
   dns: "root:root@tcp(127.0.0.1:3306)/software_cup?charset=utf8&parseTime=True&loc=Local"
+
+file:
+  path: "E:\\Code\\go\\softwareCup\\file\\"
