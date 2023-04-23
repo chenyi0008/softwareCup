@@ -31,6 +31,11 @@ func UploadOne(c *gin.Context) {
 	if err != nil {
 		fmt.Println(err)
 	}
+	c.JSON(200, gin.H{
+		"code": 1,
+		"msg":  "上传成功",
+		"data": nil,
+	})
 }
 
 func GetOne(c *gin.Context) {
@@ -52,4 +57,24 @@ func UploadSome(c *gin.Context) {
 			fmt.Println(err)
 		}
 	}
+
+	c.JSON(200, gin.H{
+		"code": 1,
+		"msg":  "上传成功",
+		"data": nil,
+	})
+}
+
+func GetList(c *gin.Context) {
+	fileList := make([]models.FileModel, 0)
+	err := utils.Db.Find(&fileList)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	c.JSON(200, gin.H{
+		"code": 1,
+		"msg":  "获取成功",
+		"data": fileList,
+	})
 }

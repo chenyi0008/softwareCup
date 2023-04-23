@@ -20,6 +20,7 @@ func Router() *gin.Engine {
 		files.POST("/uploadOne", service.UploadOne)
 		files.GET("/getOne", service.GetOne)
 		files.POST("/uploadSome", service.UploadSome)
+		files.GET("", service.GetList)
 	}
 
 	return r
