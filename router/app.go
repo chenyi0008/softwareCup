@@ -3,10 +3,12 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"softwareCup/service"
+	"softwareCup/utils"
 )
 
 func Router() *gin.Engine {
 	r := gin.Default()
+	r.Use(utils.Cors())
 	r.GET("/ping", service.GetMessage)
 
 	users := r.Group("/users")

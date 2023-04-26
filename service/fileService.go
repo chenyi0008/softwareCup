@@ -51,6 +51,7 @@ func UploadSome(c *gin.Context) {
 	for _, file := range fileList {
 		id, _ := utils.GetID()
 		model := models.FileModel{Path: strconv.Itoa(int(id)) + "_" + file.Filename}
+		fmt.Println(file.Filename)
 		c.SaveUploadedFile(file, viper.GetString("file.path")+strconv.Itoa(int(id))+"_"+file.Filename)
 		_, err := utils.Db.Insert(model)
 		if err != nil {
